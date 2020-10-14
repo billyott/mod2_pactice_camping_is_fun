@@ -1,0 +1,10 @@
+<h1><%="#{@camper.name}'s Page"%></h1>
+
+<h4><%="Name: #{@camper.name}"%><h4>
+<h4><%="Age: #{@camper.age}"%><h4>
+<h4><%="Activities:"%><h4>
+<ul>
+    <%@camper.signups.each do |signup|%>
+        <li><%= link_to "#{signup.activity.name} - Time: #{signup.time}", activity_path(signup.activity)%></li>
+    <%end%>
+</ul>
